@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+// 	ng-controller를 사용해 데이터를 출력하기 위한 module
+	var app = angular.module("test_app", [])
+	
+	app.controller("test_controller", function($scope){
+		$scope.data1 = 100;
+		$scope.data2 = 200;
+		$scope.changeValue = function(){
+			$scope.data1 = 1000;
+			$scope.data2 = 2000;
+		}
+		
+	})
+</script>
+</head>
+<body>
+<!-- 	ng-init을 사용해서 데이터를 출력 할 경우 -->
+<!-- 	<div ng-app="" ng-init="test1=1; test2=2; test3='테스트3'"> -->
+<!-- 		<p>test1 : {{test1}}</p> -->
+<!-- 		<p>test2 : {{test2}}</p> -->
+<!-- 		<p>test3 : {{test3}}</p> -->
+<!-- 	</div> -->
+
+<!-- ng-controller를 사용해 데이터를 출력 할 경우 -->
+	<div ng-app="test_app" ng-controller="test_controller">
+		<p>data1 : {{data1}}</p>
+		<p>data2 : {{data2}}</p>
+		<hr/>
+		<input type="text" ng-model="data1"/>
+		<input type="text" ng-model="data2"/>
+		
+		<button type="button" ng-click="changeValue()">값 변경	</button>
+	</div>
+</body>
+</html>
