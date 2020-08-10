@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 // 	ng-controller를 사용해 데이터를 출력하기 위한 module
-	var app = angular.module("test_app", [])
+	var app = angular.module("test_app", [])		//두번째 인수 : 모듈이 참조하는 다른 모듈을 배열에 지정. 참조하는게 없다면 빈 배열로 둔다
 	
 	app.controller("test_controller", function($scope){
 		$scope.data1 = 100;
